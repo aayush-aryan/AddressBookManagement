@@ -4,7 +4,6 @@ C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\A
 C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.runtimeconfig.dev.json
 C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.dll
 C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\bin\Debug\netcoreapp3.1\AddressBook.pdb
-C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.csproj.AssemblyReference.cache
 C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.AssemblyInfoInputs.cache
 C:\Users\user\OneDrive\Desktop\AddressBook\AddressBook\obj\Debug\netcoreapp3.1\AddressBook.AssemblyInfo.cs
