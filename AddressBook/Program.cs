@@ -10,10 +10,10 @@ namespace AddressBook
             bool flag = true;
             int option;
             Contact newcontact = new Contact();
-            AddressBookList add = new AddressBookList();
+            AddressBookList addressBookList = new AddressBookList();
             while (flag == true)
             {
-                Console.WriteLine("CHOOSE OPTION\n1.Create Contact\n2.Add contact in addressbook\n3.Edit contact\n4.exit");
+                Console.WriteLine("CHOOSE OPTION\n1.Create Contact\n2.Add contact in addressbook\n3.Edit contact\n4.Delete Contact\n5.Exit");
 
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -35,8 +35,8 @@ namespace AddressBook
                     case 2:
                         Console.WriteLine("Add contact in specific order:firstname,lastname,address,city,state,zip,phone.no,email-id");
                         newcontact = new Contact();
-                        add = new AddressBookList();
-                        add.Addcontact(newcontact);
+                        addressBookList = new AddressBookList();
+                        addressBookList.Addcontact(newcontact);
                         newcontact.firstname = Console.ReadLine();
                         newcontact.lastname = Console.ReadLine();
                         newcontact.Address = Console.ReadLine();
@@ -45,19 +45,25 @@ namespace AddressBook
                         newcontact.zip = Console.ReadLine();
                         newcontact.phone_number = Console.ReadLine();
                         newcontact.email_id = Console.ReadLine();
-                        add.Display();
+                        addressBookList.Display();
                         break;
                     case 3:
-                        Console.WriteLine("enter the name of contact to be edit");
+                        Console.WriteLine("enter the name of contact which you want to edit or update");
                         string user = Console.ReadLine();
-                        add.Editcontact(user);
-                        add.Display();
+                        addressBookList.Editcontact(user);
+                        addressBookList.Display();
                         break;
                     case 4:
+                        Console.WriteLine("enter the name of contact which you want to delete delete");
+                        string name = Console.ReadLine();
+                        addressBookList.DeleteContact(name);
+                        addressBookList.Display();
+                        break;
+                    case 5:
                         flag = false;
                         break;
                     default:
-                        Console.WriteLine("your choice should be between 1 to 4");
+                        Console.WriteLine("your choice should be between 1 to 5");
                         break;
 
                 }

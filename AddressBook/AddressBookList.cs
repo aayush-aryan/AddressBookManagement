@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AddressBook
@@ -7,15 +8,25 @@ namespace AddressBook
     class AddressBookList
     {
         List<Contact> addresslist = new List<Contact>();
+
+        /// <summary>
+        /// method for add contact in list
+        /// </summary>
+        /// <param name="contact"></param>
         public void Addcontact(Contact contact)
         {
             addresslist.Add(contact);
         }
+
+        /// <summary>
+        /// method for Updating personList
+        /// </summary>
+        /// <param name="name"></param>
         public void Editcontact(string name)
         {
             foreach (var contact in addresslist)
             {
-                if (contact.firstname == name || contact.lastname == name)
+                if (contact.firstname == name.ToLower() || contact.lastname == name.ToLower())
                 {
                     bool flag = true;
                     while (flag == true)
@@ -75,6 +86,26 @@ namespace AddressBook
                 }
             }
         }
+        /// <summary>
+        /// method for deleting contacts
+        /// </summary>
+        /// <param name="name"></param>
+        public void DeleteContact(string name)
+        {
+            Contact contact = new Contact();
+            foreach (var contactList in addresslist.ToList())
+            {
+                if (contactList.firstname == name.ToLower() || contactList.lastname == name.ToLower())
+                {
+                    contact = contactList;
+                }
+                addresslist.Remove(contact);
+                Console.WriteLine(name +" :"+ "contact has deleted");
+            }
+        }
+        /// <summary>
+        /// method  for Displaying contacts
+        /// </summary>
         public void Display()
         {
             foreach (var contact in addresslist)
