@@ -104,7 +104,7 @@ namespace AddressBook
             }
         }
         /// <summary>
-        /// method  for Displaying contacts
+        /// method  for Displaying or view contacts
         /// </summary>
         public void Display()
         {
