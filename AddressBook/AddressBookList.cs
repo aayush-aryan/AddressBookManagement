@@ -8,7 +8,7 @@ namespace AddressBook
     class AddressBookList
     {
         List<Contact> addresslist = new List<Contact>();
-
+        Dictionary<string, List<Contact>> dict = new Dictionary<string, List<Contact>>(); // uc5 for adding Multiple person, one at a time
         /// <summary>
         /// method for add contact in list
         /// </summary>
@@ -17,7 +17,6 @@ namespace AddressBook
         {
             addresslist.Add(contact);
         }
-
         /// <summary>
         /// method for Updating personList
         /// </summary>
@@ -93,15 +92,15 @@ namespace AddressBook
         public void DeleteContact(string name)
         {
             Contact contact = new Contact();
-            foreach (var contactList in addresslist.ToList())
+            foreach (var contactObj in addresslist)
             {
-                if (contactList.firstname == name.ToLower() || contactList.lastname == name.ToLower())
+                if (contactObj.firstname == name.ToLower() || contactObj.lastname == name.ToLower())
                 {
-                    contact = contactList;
+                    contact = contactObj;
                 }
-                addresslist.Remove(contact);
-                Console.WriteLine(name +" :"+ "contact has deleted");
             }
+            addresslist.Remove(contact);
+            Console.WriteLine(name + " :" + "contact has deleted");
         }
         /// <summary>
         /// method  for Displaying or view contacts
