@@ -8,7 +8,7 @@ namespace AddressBook
     class AddressBookList
     {
         List<Contact> addresslist = new List<Contact>();
-
+        Dictionary<string, List<Contact>> dict = new Dictionary<string, List<Contact>>(); // uc5 for adding Multiple person, one at a time
         /// <summary>
         /// method for add contact in list
         /// </summary>
@@ -17,7 +17,6 @@ namespace AddressBook
         {
             addresslist.Add(contact);
         }
-
         /// <summary>
         /// method for Updating personList
         /// </summary>

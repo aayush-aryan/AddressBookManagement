@@ -49,7 +49,7 @@ namespace AddressBook
                         break;
                     case 3:
                         Console.WriteLine("enter the name of contact which you want to edit or update");
-                        string user = Console.ReadLine();
+                        string user = Console.ReadLine().ToLower();
                         addressBookList.Editcontact(user);
                         addressBookList.Display();
                         break;
