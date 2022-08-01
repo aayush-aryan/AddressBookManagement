@@ -37,8 +37,8 @@ namespace AddressBook
                         newcontact = new Contact();
                         addressBookList = new AddressBookList();
                         addressBookList.Addcontact(newcontact);
-                        newcontact.firstname = Console.ReadLine();
-                        newcontact.lastname = Console.ReadLine();
+                        newcontact.firstname = Console.ReadLine().ToLower();
+                        newcontact.lastname = Console.ReadLine().ToLower();
                         newcontact.Address = Console.ReadLine();
                         newcontact.city = Console.ReadLine();
                         newcontact.state = Console.ReadLine();

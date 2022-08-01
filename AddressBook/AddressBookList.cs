@@ -93,15 +93,15 @@ namespace AddressBook
         public void DeleteContact(string name)
         {
             Contact contact = new Contact();
-            foreach (var contactList in addresslist.ToList())
+            foreach (var contactObj in addresslist)
             {
-                if (contactList.firstname == name.ToLower() || contactList.lastname == name.ToLower())
+                if (contactObj.firstname == name.ToLower() || contactObj.lastname == name.ToLower())
                 {
-                    contact = contactList;
+                    contact = contactObj;
                 }
-                addresslist.Remove(contact);
-                Console.WriteLine(name +" :"+ "contact has deleted");
             }
+            addresslist.Remove(contact);
+            Console.WriteLine(name + " :" + "contact has deleted");
         }
         /// <summary>
         /// method  for Displaying contacts
