@@ -8,7 +8,7 @@ namespace AddressBook
     class AddressBookList
     {
         List<Contact> addresslist = new List<Contact>();
-        Dictionary<string, List<Contact>> dict = new Dictionary<string, List<Contact>>(); // uc5 for adding Multiple person, one at a time
+        Dictionary<string, List<Contact>> dict = new Dictionary<string, List<Contact>>(); 
         /// <summary>
         /// method for add contact in list
         /// </summary>
@@ -119,6 +119,36 @@ namespace AddressBook
                 Console.WriteLine("Email-Id =" + contact.email_id);
             }
 
+        }
+
+        public void AddUniqueContact(string firstname)
+        {
+            foreach (var contact in addresslist)  
+            {
+                if (addresslist.Contains(contact))
+                {
+                    //string uniquename = Console.ReadLine();
+                    dict.Add(firstname, addresslist);
+                }
+            }
+        }
+
+        public void DisplayUniqueContact()
+        {
+            Console.WriteLine("Enter the name of dictionary");
+            string firstname = Console.ReadLine();
+            foreach (var contact in dict)
+            {
+                if (contact.Key == firstname)
+                {
+                    foreach (var item in contact.Value)
+                    {
+                        Console.WriteLine("Firstname:" + item.firstname + "\n" + "lastname:" + item.lastname + "\n" + "Address:" 
+                            + item.Address + "\n" + "City:" + item.city + "\n" + "State:" + item.state + "\n" + "Zip:" +
+                            item.zip + "\n" + "Phone.No-" + item.phone_number + "\n" + "Email.Id:" + item.email_id);
+                    }
+                }
+            }
         }
 
     }

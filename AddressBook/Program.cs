@@ -13,7 +13,7 @@ namespace AddressBook
             AddressBookList addressBookList = new AddressBookList();
             while (flag == true)
             {
-                Console.WriteLine("CHOOSE OPTION\n1.Create Contact\n2.Add contact in addressbook\n3.Edit contact\n4.Delete Contact\n5.Exit");
+                Console.WriteLine("CHOOSE OPTION\n1.Create Contact\n2.Add contact in addressbook\n3.Edit contact\n4.Delete Contact\n5.Add Unique Contact\n6.Exit");
 
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
@@ -35,7 +35,7 @@ namespace AddressBook
                     case 2:
                         Console.WriteLine("Add contact in specific order:firstname,lastname,address,city,state,zip,phone.no,email-id");
                         newcontact = new Contact();
-                        addressBookList = new AddressBookList();
+                       // addressBookList = new AddressBookList();
                         addressBookList.Addcontact(newcontact);
                         newcontact.firstname = Console.ReadLine().ToLower();
                         newcontact.lastname = Console.ReadLine().ToLower();
@@ -60,6 +60,12 @@ namespace AddressBook
                         addressBookList.Display();
                         break;
                     case 5:
+                        Console.WriteLine("Entre the firstname as a uniquename");
+                        string firstname = Console.ReadLine();
+                        addressBookList.AddUniqueContact(firstname);
+                        addressBookList.DisplayUniqueContact();
+                        break;
+                    case 6:
                         flag = false;
                         break;
                     default:
