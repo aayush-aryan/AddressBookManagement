@@ -9,7 +9,6 @@ namespace AddressBook
     {
        public List<Contact> addresslist = new List<Contact>();
         Dictionary<string, List<Contact>> dict = new Dictionary<string, List<Contact>>();
-        Contact contact1;
         public static void CreateContact()
         {
             List<Contact> Person = new List<Contact>();
@@ -206,6 +205,14 @@ namespace AddressBook
             }
             SearchDisplay(cityPerson, statePerson, city, state);
         }
+        /// <summary>
+        /// display method for searching
+        /// person by city
+        /// </summary>
+        /// <param name="cityPerson"></param>
+        /// <param name="statePersons"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
         public static void SearchDisplay(Dictionary<string, List<Contact>> cityPerson, Dictionary<string, List<Contact>> statePersons, string city, string state)
         {
             Console.WriteLine("person in {0} city is :", city);
