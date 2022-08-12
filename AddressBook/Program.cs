@@ -35,7 +35,7 @@ namespace AddressBook
                     case 2:
                         Console.WriteLine("Add contact in specific order:firstname,lastname,address,city,state,zip,phone.no,email-id");
                         newcontact = new Contact();
-                       // addressBookList = new AddressBookList();
+                        //addressBookList = new AddressBookList();
                         addressBookList.Addcontact(newcontact);
                         newcontact.firstname = Console.ReadLine().ToLower();
                         newcontact.lastname = Console.ReadLine().ToLower();
@@ -68,6 +68,7 @@ namespace AddressBook
                     case 6:
                         flag = false;
                         break;
+
                     default:
                         Console.WriteLine("your choice should be between 1 to 5");
                         break;

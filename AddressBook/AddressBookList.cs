@@ -5,16 +5,21 @@ using System.Text;
 
 namespace AddressBook
 {
-    class AddressBookList
+  public class AddressBookList
     {
-        List<Contact> addresslist = new List<Contact>();
-        Dictionary<string, List<Contact>> dict = new Dictionary<string, List<Contact>>(); 
+       public List<Contact> addresslist = new List<Contact>();
+        Dictionary<string, List<Contact>> dict = new Dictionary<string, List<Contact>>();
+        Contact contact1;
+        public static void CreateContact()
+        {
+            List<Contact> Person = new List<Contact>();
+        }
         /// <summary>
         /// method for add contact in list
         /// </summary>
         /// <param name="contact"></param>
         public void Addcontact(Contact contact)
-        {
+        { 
             addresslist.Add(contact);
         }
         /// <summary>
@@ -147,6 +152,28 @@ namespace AddressBook
                             + item.Address + "\n" + "City:" + item.city + "\n" + "State:" + item.state + "\n" + "Zip:" +
                             item.zip + "\n" + "Phone.No-" + item.phone_number + "\n" + "Email.Id:" + item.email_id);
                     }
+                }
+            }
+        }
+        /// <summary>
+        /// uc7
+        /// method for checking duplicate entry in the List;
+        /// </summary>
+        /// <param name="contact"></param>
+        /// <param name="newcontact"></param>
+
+        public void CheckDuplicate(List<Contact> contact, Contact newcontact)
+        {
+            foreach (var item in contact)
+            {
+                var person = contact.Find(e => e.firstname.Equals(newcontact.firstname));
+                if (person != null)
+                {
+                    Console.WriteLine("this person already exist in addressbook with same firstname");
+                }  
+                else
+                {
+                    Console.WriteLine("Add another conatct");
                 }
             }
         }
