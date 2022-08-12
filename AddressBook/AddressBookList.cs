@@ -221,10 +221,8 @@ namespace AddressBook
                 Console.WriteLine("{0}", contact.firstname);
             }
             Console.WriteLine("Total count of persons in the city {0} is {1}", city, cityPerson[city].Count);
-
             Console.WriteLine("Persons in {0} state", state);
             Console.WriteLine("Persons in {0} state is", state);
-
             foreach (Contact contact in statePersons[state])
             {
                 Console.WriteLine("{0}", contact.firstname);

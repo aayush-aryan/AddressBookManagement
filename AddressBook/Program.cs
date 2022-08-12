@@ -73,7 +73,7 @@ namespace AddressBook
                         break;
 
                     default:
-                        Console.WriteLine("your choice should be between 1 to 5");
+                        Console.WriteLine("your choice should be between 1 to 8");
                         break;
 
                 }
