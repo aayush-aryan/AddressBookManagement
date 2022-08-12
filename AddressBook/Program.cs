@@ -13,8 +13,8 @@ namespace AddressBook
             AddressBookList addressBookList = new AddressBookList();
             while (flag == true)
             {
-                Console.WriteLine("CHOOSE OPTION\n1.Create Contact\n2.Add contact in addressbook\n3.Edit contact\n4.Delete Contact\n5.Add Unique Contact\n6.Exit");
-
+                Console.WriteLine("CHOOSE OPTION\n1.Create Contact\n2.Add contact in addressbook\n3.Edit contact\n4.Delete Contact" +
+                    "\n5.Add Unique Contactn6.Search person by city or state\n7.Exit");
                 option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -66,6 +66,9 @@ namespace AddressBook
                         addressBookList.DisplayUniqueContact();
                         break;
                     case 6:
+                        addressBookList.Search();
+                        break;
+                    case 7:
                         flag = false;
                         break;
 

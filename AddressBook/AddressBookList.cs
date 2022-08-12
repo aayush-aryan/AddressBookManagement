@@ -177,6 +177,53 @@ namespace AddressBook
                 }
             }
         }
+        /// <summary>
+        /// method for searching person by city:
+        /// </summary>
+        public void Search()
+        {
+            Dictionary<string, List<Contact>> cityPerson = new Dictionary<string, List<Contact>>();
+            Dictionary<string, List<Contact>> statePerson = new Dictionary<string, List<Contact>>();
+            Console.WriteLine("enter the city that you want to search");
+            string city = Console.ReadLine();
+            cityPerson[city] = new List<Contact>();
+            Console.WriteLine("enter the state that you want to search");
+            string state = Console.ReadLine();
+            statePerson[state] = new List<Contact>();
+            foreach (string addressbooknames in dict.Keys)
+            {
+                foreach (Contact contact in dict[addressbooknames])
+                {
+                    if (city.ToLower() == contact.city)
+                    {
+                        cityPerson[city].Add(contact);
+                    }
+                    if (state.ToLower() == contact.state)
+                    {
+                        statePerson[state].Add(contact);
+                    }
+                }
+            }
+            SearchDisplay(cityPerson, statePerson, city, state);
+        }
+        public static void SearchDisplay(Dictionary<string, List<Contact>> cityPerson, Dictionary<string, List<Contact>> statePersons, string city, string state)
+        {
+            Console.WriteLine("person in {0} city is :", city);
+            foreach (Contact contact in cityPerson[city])
+            {
+                Console.WriteLine("{0}", contact.firstname);
+            }
+            Console.WriteLine("Total count of persons in the city {0} is {1}", city, cityPerson[city].Count);
+
+            Console.WriteLine("Persons in {0} state", state);
+            Console.WriteLine("Persons in {0} state is", state);
+
+            foreach (Contact contact in statePersons[state])
+            {
+                Console.WriteLine("{0}", contact.firstname);
+            }
+            Console.WriteLine("Total count of persons in the state {0} is {1}", state, statePersons[state].Count);
+        }
 
     }
 }
